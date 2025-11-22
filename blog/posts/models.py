@@ -4,7 +4,9 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=60)
     description = models.TextField(null=True, blank=True)
-    # description2 = models.TextField()
+
+    class Meta:
+        verbose_name_plural = "Categories"
 
 
 class Topic(models.Model):
