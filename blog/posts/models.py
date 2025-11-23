@@ -9,15 +9,19 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "Categories"
+        ordering = ['name']
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.id}'
 
 
 class Topic(models.Model):
     name = models.CharField(max_length=60)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['name']
 
     def __str__(self):
         return f'{self.name}'
@@ -32,6 +36,10 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
+    class Meta:
+        ordering = ['-created_at']
+
     def __str__(self):
         return f'{self.title}'
 
+# a Post po dacie dodania od najnowszych.
