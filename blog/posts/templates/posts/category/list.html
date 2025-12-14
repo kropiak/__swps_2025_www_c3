@@ -1,0 +1,12 @@
+{% extends "posts/base.html" %}
+
+{% block title %}Lista obiektów Category{% endblock %}
+
+{% block content %}
+Lista kategorii:
+{% for category in categories %}
+<p>Nazwa: {{ category.name }}</p>
+<p>Opis: {{ category.description }}</p>
+<hr>
+{% endfor %}
+{% endblock %}
