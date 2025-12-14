@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Category, Topic, Post
 
-
+# @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     fields = ['title', 'text', 'topic', 'slug', 'created_by', 'created_at', 'updated_at']
     readonly_fields = ['created_by', 'created_at', 'updated_at']
@@ -43,4 +43,3 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(Post, PostAdmin)
-
