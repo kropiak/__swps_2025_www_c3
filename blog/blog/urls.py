@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', include('posts.urls')),
     path('', views.index_view),
+    path('api-auth/', include('rest_framework.urls')),
 ] + debug_toolbar_urls()
