@@ -11,7 +11,7 @@ class PostAdmin(admin.ModelAdmin):
     # zapis topic__category__name jest wymagany, aby można było przez nazwę
     # kolumny w postaci łańcucha znaków (typ str) przekazać wartość równoważną
     # wywołaniu topic.category.name
-    list_filter = ['topic', 'topic__category__name', 'created_by']
+    list_filter = ['topic', 'topic__name', 'created_by']
     prepopulated_fields = {'slug': ['title']}
 
     @admin.display(description='Short text')

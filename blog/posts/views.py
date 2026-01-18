@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 import datetime
-from .models import Topic, Category
+from .models import Category, Category
 
 
 def welcome_view(request):
@@ -16,7 +16,7 @@ def welcome_view(request):
 
 def topic_list(request):
     # pobieramy wszystkie obiekty Topic z bazy poprzez QuerySet
-    topics = Topic.objects.all()
+    topics = Category.objects.all()
     return HttpResponse(topics)
 
 

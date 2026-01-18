@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'posts',
     'debug_toolbar',
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
